@@ -49,6 +49,14 @@ function db_query($q)
 	return $res;
 }
 
+# Pass a SELECT query and return whether or not their are matching values.
+# Input: $q = the SELECT query.
+# Returns : TRUE if query matches any rows, FALSE otherwise.
+function db_select_exists($q)
+{
+	return (pg_num_rows(db_query($q)) != 0);
+}
+
 # Select multiple rows and return an array of all matching rows.
 # The id field and a least another field must be present in the query. 
 # You can set a limit of rows to retrieve if you haven't embeded

@@ -18,9 +18,18 @@ define('API2', 'https://api.guildwars2.com/v2/');
 include_once(CURR_DIR.'/json.php');
 
 # Get the user's API key from disk.
+# Returns: api token key and appriate URL prfix.
 function api_get_key()
 {
 	return '?access_token=' . trim(file_get_contents(CURR_DIR . '/secret/.key'));
+}
+
+# Get the language with appropriate prefix.
+# Input: a language code (EN or FR)
+# Returns: language decorated with appropriate URL prfix.
+function api_get_lang($lang)
+{
+	return "?lang=$lang";
 }
 
 # Send an API call to the site and return the response.
@@ -50,5 +59,14 @@ function api_get_specific_character($name)
 {
 	return api_get_url(API2 . 'characters/' . rawurlencode($name). api_get_key());
 }
+
+# Get a item.
+# Input: $id = the item's number.
+# Input: $lang = the language in which to get it.
+function api_get_item($id, $lang)
+{
+	return api_get_url(API2 . "items/$id" . api_get_lang($lang));
+}
+
 
 ?>
