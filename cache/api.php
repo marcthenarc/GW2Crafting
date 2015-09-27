@@ -64,7 +64,7 @@ function api_get_specific_character($name)
 # Input: $id = the item's number.
 # Input: $lang = the language in which to get it.
 # Returns: a json string.
-function api_get_item($id, $lang)
+function api_get_specific_item($id, $lang)
 {
 	return api_get_url(API2 . "items/$id" . api_get_lang($lang));
 }
@@ -83,5 +83,6 @@ function api_get_specific_recipe($id)
 {
 	return api_get_url(API2 . "recipes/$id");
 }
+
 
 ?>

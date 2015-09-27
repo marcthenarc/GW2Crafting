@@ -32,8 +32,8 @@ function item_add($id)
 	if (!db_select_exists("SELECT id FROM items WHERE id = $id"))
 	{
 		# Get data in both languages.
-		$json_en = api_get_item($id, 'EN');
-		$json_fr = api_get_item($id, 'FR');
+		$json_en = api_get_specific_item($id, 'EN');
+		$json_fr = api_get_specific_item($id, 'FR');
 
 		# Extract the names
 		$name_en = json_get_field(json_get_object($json_en), 'name');
