@@ -21,8 +21,8 @@ include_once(CURR_DIR.'/secret/.dbsettings.php');
 # Add an item to the database and add the corresponding icon
 # in the icons' cache folder.
 # Input: the item's API id number.
-# Returns : nothing but exceptions will the raised if problems arises.
-function add_item($id)
+# Returns : nothing but exceptions will the raised if problems arise.
+function item_add($id)
 {
 	# Forward declare so that we can reuse the API call to the item if necessary,
 	# because I would like to check the icon cache independently.
