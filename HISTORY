@@ -3,4 +3,5 @@
 	Basic functions for API, JSON and database manipulation.
 	Character management completed.
 	Item addition in database and icon cache.
+	Basic recipe support. 
 

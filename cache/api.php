@@ -54,7 +54,7 @@ function api_get_characters()
 
 # Get a specific character from the user's account.
 # Input: The character's name
-# Returns a json string.
+# Returns: a json string.
 function api_get_specific_character($name)
 {
 	return api_get_url(API2 . 'characters/' . rawurlencode($name). api_get_key());
@@ -63,10 +63,25 @@ function api_get_specific_character($name)
 # Get a item.
 # Input: $id = the item's number.
 # Input: $lang = the language in which to get it.
+# Returns: a json string.
 function api_get_item($id, $lang)
 {
 	return api_get_url(API2 . "items/$id" . api_get_lang($lang));
 }
 
+# Get all recipes IDs.
+# Returns: a json string.
+function api_get_recipes()
+{
+	return api_get_url(API2 . 'recipes');
+}
+
+# Get a specific recipe.
+# Input: $id = the item's number.
+# Returns: a json string.
+function api_get_specific_recipe($id)
+{
+	return api_get_url(API2 . "recipes/$id");
+}
 
 ?>
