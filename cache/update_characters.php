@@ -1,5 +1,15 @@
 <?php
 
+#-------------------------------------------------------
+# update_characters.php
+# Retrieves and stores character info and updates.
+#
+# (c) 2015, Marc St-Jacques <marc@geechef.com>
+#
+# Read the COPYING file for my very permissive and
+# delicious licence.
+#-------------------------------------------------------
+
 if (!defined('CURR_DIR'))
 	define('CURR_DIR', dirname(__FILE__));
 
