@@ -48,7 +48,7 @@ function item_add($id)
 	if (file_exists($fn) === false)
 	{
 		if (empty($json_en))
-			$json_en = api_get_item($id, 'EN');
+			$json_en = api_get_select_item($id, 'EN');
 
 		$icon = api_get_url(json_get_field(json_get_object($json_en), 'icon'));
 
