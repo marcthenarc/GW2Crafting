@@ -32,11 +32,8 @@ function inventory_add_to_total($id, $amount)
 		$total[$id] = $amount;
 }
 
-# Get all items of inventory relevant for crafting.
-function inventory_get_all()
+try
 {
-	global $total;
-
 	# Get items from the bank
 	$arr = json_get_object(api_get_bank());
 	
@@ -89,7 +86,9 @@ function inventory_get_all()
 		item_add($k);
 	}
 }
-
-inventory_get_all();
+catch (Exception $e)
+{
+	echo $e->getMessage();
+}
 
 ?>
