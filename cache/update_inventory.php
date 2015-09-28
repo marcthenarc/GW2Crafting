@@ -1,8 +1,8 @@
 <?php
 
 #-------------------------------------------------------
-# inventory.php
-# Inventory management.
+# update_inventory.php
+# Inventory retrieving ands storing.
 #
 # (c) 2015, Marc St-Jacques <marc@geechef.com>
 #
