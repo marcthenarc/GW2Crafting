@@ -53,14 +53,4 @@ function recipe_add($id)
 	}
 }
 
-# Check if all recipes are accounted for in the database.
-# Returns: nothing.
-function recipe_check_all()
-{
-	$arr = json_get_object(api_get_recipes());
-
-	foreach ($arr as $v)
-		add_recipe($v);
-}
-
 ?>
