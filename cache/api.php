@@ -84,5 +84,18 @@ function api_get_specific_recipe($id)
 	return api_get_url(API2 . "recipes/$id");
 }
 
+# Get all items from the bank.
+# Returns: a json string.
+function api_get_bank()
+{
+	return api_get_url(API2 . 'account/bank' . api_get_key());
+}
+
+# Get all materials stored.
+# Returns: a json string.
+function api_get_materials()
+{
+	return api_get_url(API2 . 'account/materials' . api_get_key());
+}
 
 ?>

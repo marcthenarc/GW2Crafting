@@ -161,7 +161,10 @@ function db_update($table, $data, $cond)
 		if (!empty($d))
 			$d .= ',';
 
-		$d .= sprintf("%s='%s'", $k, str_replace("'", "''", $v));
+		if ($v[0] == '%')
+			$d .= sprintf("%s=%s", $k, str_replace("'", "''", substr($v, 1)));
+		else
+			$d .= sprintf("%s='%s'", $k, str_replace("'", "''", $v));
 	}
 
 	foreach ($cond as $k=>$v)
