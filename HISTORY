@@ -5,3 +5,10 @@
 	Item addition in database and icon cache.
 	Basic recipe support.
 	Inventory management completed.
+
+2015.09.28
+	Additional recipe support.
+
+2015.09.29
+	Targets management completed.
+	Create inventory API and reshaped inventory updating.

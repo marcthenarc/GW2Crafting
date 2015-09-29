@@ -13,6 +13,7 @@
 if (!defined('CURR_DIR'))
 	define('CURR_DIR', dirname(__FILE__));
 
+include_once(CURR_DIR.'/inventory.php');
 include_once(CURR_DIR.'/item.php');
 include_once(CURR_DIR.'/api.php');
 include_once(CURR_DIR.'/db.php');
@@ -67,7 +68,7 @@ try
 			{
 				$inv = json_get_field($v, 'inventory');
 
-				# Fr each inventory item in bag ...
+				# For each inventory item in bag ...
 				foreach ($inv as $vv)
 				{
 					if (is_object($vv))
@@ -77,14 +78,9 @@ try
 		}
 	}
 
-	# Take everything and add them to the inventory table, then the items table.
+	# Take everything and add them to the inventory table.
 	foreach ($total as $k=>$v)
-	{
-		if (!db_update('inventory', array('amount'=>$v, 'diff'=>"%$v - amount"), array('id'=>$k)))
-			db_insert('inventory', array('id'=>$k, 'amount'=>$v, 'diff'=>0));
-
-		item_add($k);
-	}
+		inventory_update($k, $v);
 }
 catch (Exception $e)
 {
