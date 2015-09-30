@@ -15,7 +15,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: targets; Type: TABLE; Schema: public; Owner: narc; Tablespace: 
+-- Name: targets; Type: TABLE; Schema: public; Owner: <OWNER>; Tablespace: 
 --
 
 CREATE TABLE targets (
@@ -27,10 +27,10 @@ CREATE TABLE targets (
 );
 
 
-ALTER TABLE public.targets OWNER TO narc;
+ALTER TABLE public.targets OWNER TO <OWNER>;
 
 --
--- Name: targets_id_seq; Type: SEQUENCE; Schema: public; Owner: narc
+-- Name: targets_id_seq; Type: SEQUENCE; Schema: public; Owner: <OWNER>
 --
 
 CREATE SEQUENCE targets_id_seq
@@ -41,17 +41,17 @@ CREATE SEQUENCE targets_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.targets_id_seq OWNER TO narc;
+ALTER TABLE public.targets_id_seq OWNER TO <OWNER>;
 
 --
--- Name: targets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: narc
+-- Name: targets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: <OWNER>
 --
 
 ALTER SEQUENCE targets_id_seq OWNED BY targets.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: narc
+-- Name: id; Type: DEFAULT; Schema: public; Owner: <OWNER>
 --
 
 ALTER TABLE ONLY targets ALTER COLUMN id SET DEFAULT nextval('targets_id_seq'::regclass);
