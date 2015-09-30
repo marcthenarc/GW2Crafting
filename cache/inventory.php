@@ -42,4 +42,11 @@ function inventory_is_minimal_amount_met($id, $amount)
 	return true;
 }
 
+function inventory_has_diff()
+{
+	$q = 'SELECT * FROM inventory WHERE diff != 0';
+
+	return db_select_array($q);
+}
+
 ?>
